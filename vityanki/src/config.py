@@ -3,10 +3,10 @@ from dotenv import load_dotenv
 
 class Config:
     def __init__(self):
-        env_path = os.path.join(os.getcwd(), 'vityanki', 'variables.env')
+        env_path = os.path.join(os.getcwd(), 'vityanki', 'constants.env')
 
         if not os.path.exists(env_path):
-            raise FileNotFoundError("The 'variables.env' file is missing in the 'vityanki' directory.")
+            raise FileNotFoundError("The 'constants.env' file is missing in the 'vityanki' directory.")
         else:
             load_dotenv(env_path)
             
