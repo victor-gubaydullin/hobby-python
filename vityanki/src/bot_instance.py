@@ -1,15 +1,14 @@
 import os
 from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher
+from config import load_config
+from logger import setup_logging
 
-if not os.path.join(os.getcwd(), 'vityanki', 'variables.env'):
-    raise FileNotFoundError("The 'variables.env' file is missing in the 'vityanki' directory.")
-else:
-    env_path = os.path.join(os.getcwd(), 'vityanki', 'variables.env')
-    print(f"Loading environment variables from {env_path}")
+config = load_config()
+logger = setup_logging('bot_instance')
 
-load_dotenv(env_path)
-TOKEN = os.getenv("BOT_TOKEN")
+bot = Bot(token=config.TOKEN)
+logger.info("Bot instance created with token from config.")
 
-bot = Bot(token=TOKEN)
 dp = Dispatcher(bot=bot)
+logger.info("Dispatcher initialized with the bot instance.")
