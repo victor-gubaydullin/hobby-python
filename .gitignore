@@ -1,6 +1,9 @@
 # Environment variables
 *.env
 
+# Database files
+*.db
+
 # Logging
 *.log
 logs/

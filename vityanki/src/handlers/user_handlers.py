@@ -14,7 +14,7 @@ async def start_command_handler(message: Message, state: FSMContext):
 
 @user_router.callback_query(F.data.startswith("interface_language"))
 async def interface_language_selection_handler(callback: CallbackQuery, state: FSMContext):
-    reply_text, reply_keyboard = await process_interface_language_selection(state)
+    reply_text, reply_keyboard = await process_interface_language_selection(callback, state)
 
     await callback.message.edit_text(reply_text, reply_markup=reply_keyboard)
     await callback.answer()

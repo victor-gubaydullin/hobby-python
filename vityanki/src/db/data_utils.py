@@ -1,30 +1,18 @@
-from aiogram import Bot, Dispatcher, types
-from aiogram.types import Message
-from aiogram.filters import Command
-import asyncio
-import os
-from dotenv import load_dotenv
+from .data_init import SessionLocal
+from .data_models import User
 
-load_dotenv()
-TOKEN = os.getenv("BOT_TOKEN")
+async def get_user_interface_language(telegram_id):
+    with SessionLocal() as session:
+        user = session.get(User, telegram_id)
+        return user.interface_language if user else None
 
-TOKEN = "YOUR_BOT_TOKEN"
-
-bot = Bot(token=TOKEN)
-dp = Dispatcher()
-
-@dp.message(Command("start"))
-async def start_handler(message: Message):
-    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    keyboard.add(
-        types.KeyboardButton("EN"),
-        types.KeyboardButton("DE"),
-        types.KeyboardButton("RU")
-    )
-    await message.answer("Select interface language / Wähle Sie die Sprache / Выберите язык интерфейса:", reply_markup=keyboard)
-
-async def main():
-    await dp.start_polling(bot)
-
-if __name__ == "__main__":
-    asyncio.run(main())
+async def set_user_interface_language(telegram_id, language):
+    with SessionLocal() as session:
+        user = session.get(User, telegram_id)
+        if user:
+            user.interface_language = language
+            session.commit()
+        else:
+            new_user = User(telegram_id=telegram_id, interface_language=language)
+            session.add(new_user)
+            session.commit()
