@@ -1,0 +1,11 @@
+registration:
+  language_selected: "Language selected. You are now ready to use the bot."
+
+main_menu:
+  study_words_set: "Study words set"
+  add_words_set: "Add words set"
+  edit_words_set: "Edit words set"
+  delete_words_set: "Delete words set"
+  settings: "Settings"
+  help: "Help"
+  about: "About"
