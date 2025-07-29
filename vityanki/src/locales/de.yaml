@@ -1,11 +1,11 @@
 registration:
-  language_selected: "Sprache ausgewählt. Sie können den Bot nun benutzen."
+  language_selected: "Sprache ausgewählt. Sie können den Bot nun benutzen! Sehen Sie sich die Befehle an, um zu beginnen."
 
 main_menu:
-  study_words_set: "Wortset lernen"
-  add_words_set: "Wortset hinzufügen"
-  edit_words_set: "Wortset bearbeiten"
-  delete_words_set: "Wortset löschen"
+  study_word_set: "Wortset lernen"
+  add_word_set: "Wortset hinzufügen"
+  edit_word_set: "Wortset bearbeiten"
+  delete_word_set: "Wortset löschen"
   settings: "Einstellungen"
   help: "Hilfe"
   about: "Über"

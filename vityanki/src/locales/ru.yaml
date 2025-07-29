@@ -1,11 +1,11 @@
 registration:
-  language_selected: "Язык выбран. Теперь вы можете использовать бота."
+  language_selected: "Язык выбран. Теперь вы можете использовать бота! Ознакомьтесь с командами, чтобы начать."
 
 main_menu:
-  study_words_set: "Изучать набор слов"
-  add_words_set: "Добавить набор слов"
-  edit_words_set: "Редактировать набор слов"
-  delete_words_set: "Удалить набор слов"
+  study_word_set: "Изучать набор слов"
+  add_word_set: "Добавить набор слов"
+  edit_word_set: "Редактировать набор слов"
+  delete_word_set: "Удалить набор слов"
   settings: "Настройки"
   help: "Помощь"
   about: "О программе"
