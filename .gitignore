@@ -8,6 +8,10 @@
 *.log
 logs/
 
+# Email rewrite
+#  This file is used to rewrite email addresses in git history.
+*.gitmailmap
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
