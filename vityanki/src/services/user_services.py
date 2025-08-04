@@ -1,10 +1,12 @@
 from aiogram.types import CallbackQuery
-from keyboards.interface_language import language_selection_keyboard
-from keyboards.main_menu import main_menu_keyboard
 from aiogram.fsm.context import FSMContext
 from states.registration import Registration
 from locales.translation import t
-from db.data_utils import set_user_interface_language
+from keyboards.interface_language import language_selection_keyboard
+from keyboards.main_menu import main_menu_keyboard
+from keyboards.settings import settings_keyboard
+from keyboards.about import about_keyboard
+from db.data_utils import set_user_interface_language, get_user_interface_language
 
 async def process_start_command(state: FSMContext):
     reply_text = "Select interface language / Wählen Sie die Sprache / Выберите язык интерфейса:"
@@ -20,10 +22,30 @@ async def process_interface_language_selection(callback: CallbackQuery, state: F
     
     await set_user_interface_language(telegram_id, language_code)
 
-    await state.set_state(Registration.registration_complete)
+    await state.clear()
 
     reply_text = t(language_code, "registration.language_selected")
-    #reply_text = "Language selected. You are now ready to use the bot."
     reply_keyboard = main_menu_keyboard(language_code)
+
+    return reply_text, reply_keyboard
+
+async def process_main_menu_trigger(callback: CallbackQuery):
+    language_code = await get_user_interface_language(callback.from_user.id)
+    reply_text = t(language_code, "main_menu.greetings")
+    reply_keyboard = main_menu_keyboard(language_code)
+
+    return reply_text, reply_keyboard
+
+async def process_settings_trigger(callback: CallbackQuery):
+    language_code = await get_user_interface_language(callback.from_user.id)
+    reply_text = t(language_code, "settings.text")
+    reply_keyboard = settings_keyboard(language_code)
+
+    return reply_text, reply_keyboard
+
+async def process_about_trigger(callback: CallbackQuery):
+    language_code = await get_user_interface_language(callback.from_user.id)
+    reply_text = t(language_code, "about.text")
+    reply_keyboard = about_keyboard(language_code)
 
     return reply_text, reply_keyboard

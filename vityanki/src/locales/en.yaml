@@ -2,10 +2,37 @@ registration:
   language_selected: "Language selected. You are now ready to use the bot! Check the commands to get started."
 
 main_menu:
-  study_word_set: "Study words set"
-  add_word_set: "Add words set"
-  edit_word_set: "Edit words set"
-  delete_word_set: "Delete words set"
-  settings: "Settings"
-  help: "Help"
-  about: "About"
+  greetings: "Welcome to Vityanki Bot! Learn any new language with ease with your custom flashcards 
+              and get reminded when you need to repeat them to get most impact in shortest term via Ebbinghaus Forgetting Curve method."
+  study_word_set: "📖 Study word set"
+  add_word_set: "➕ Add word set"
+  edit_word_set: "✏️ Edit word set"
+  delete_word_set: "🗑️ Delete word set"
+  settings: "⚙️ Settings"
+  help: "❓ Help"
+  about: "ℹ️ About"
+
+settings:
+  text: "Here you can change the common settings of the bot."
+  back_to_main_menu: "🔙 Back"
+  interface_language: "🌐 Language"
+
+help:
+  text: "Here you can find information on how to use the bot and the available commands."
+  back_to_main_menu: "🔙 Back"
+
+about:
+  text: "Vityanki Bot is a Telegram bot designed to help you learn new languages effectively using spaced repetition and custom flashcards.\n\n
+         
+         It is based on the Ebbinghaus Forgetting Curve method to optimize your learning process. \n\n
+         The bot allows you to create, edit, and delete word sets, study them, and receive reminders for optimal review times.\n\n
+         
+         If you like the bot, please consider supporting its development by donating
+         or by sharing the bot with your friends and language learning communities.\n\n
+         
+         Alternatively, you can contribute to the project on GitHub by reporting issues or suggesting improvements on
+         the <a href=\"https://github.com/victor-gubaydullin/hobby-python/vityanki\">GitHub repository.</a>\n\n
+
+         Thank you for using Vityanki Bot! Happy learning!"
+  back_to_main_menu: "🔙 Back"
+  donate: "💛 Support"

@@ -2,10 +2,37 @@ registration:
   language_selected: "Sprache ausgewählt. Sie können den Bot nun benutzen! Sehen Sie sich die Befehle an, um zu beginnen."
 
 main_menu:
-  study_word_set: "Wortset lernen"
-  add_word_set: "Wortset hinzufügen"
-  edit_word_set: "Wortset bearbeiten"
-  delete_word_set: "Wortset löschen"
-  settings: "Einstellungen"
-  help: "Hilfe"
-  about: "Über"
+  greetings: "Willkommen beim Vityanki Bot! Lernen Sie jede neue Sprache mühelos mit Ihren benutzerdefinierten Karteikarten und lassen Sie sich daran erinnern, wann Sie sie wiederholen müssen, um die größte Wirkung in kürzester Zeit zu erzielen, basierend auf der Ebbinghaus Vergessenskurve."
+  study_word_set: "📖 Wortset lernen"
+  add_word_set: "➕ Wortset hinzufügen"
+  edit_word_set: "✏️ Wortset bearbeiten"
+  delete_word_set: "🗑️ Wortset löschen"
+  settings: "⚙️ Einstellungen"
+  help: "❓ Hilfe"
+  about: "ℹ️ Über"
+
+settings:
+  text: "Hier können Sie die allgemeinen Einstellungen des Bots ändern."
+  back_to_main_menu: "← Zurück"
+  interface_language: "🌐 Sprache"
+
+help:
+  text: "Hier finden Sie Informationen zur Verwendung des Bots und zu den verfügbaren Befehlen."
+  back_to_main_menu: "← Zurück"
+
+about:
+  text: "Vityanki Bot ist ein Telegram-Bot, der entwickelt wurde, um
+        Ihnen zu helfen, neue Sprachen effektiv zu lernen, indem Sie auf zeitlich abgestimmte Wiederholungen und benutzerdefinierte Karteikarten zurückgreifen.\n\n
+          
+        Er basiert auf der Ebbinghaus Vergessenskurve, um Ihren Lernprozess zu optimieren. \n\n
+        Der Bot ermöglicht es Ihnen, Wortsets zu erstellen, zu bearbeiten und zu löschen, sie zu lernen und Erinnerungen für optimale Wiederholungszeiten zu erhalten.\n\n
+          
+        Wenn Ihnen der Bot gefällt, ziehen Sie bitte in Betracht, seine Entwicklung durch eine Spende zu unterstützen
+        oder den Bot mit Ihren Freunden und Sprachlerngemeinschaften zu teilen.\n\n
+          
+        Alternativ können Sie zum Projekt auf GitHub beitragen, indem Sie Probleme melden oder Verbesserungen vorschlagen auf
+        dem <a href=\"https://github.com/victor-gubaydullin/hobby-python/vityanki\">GitHub-Repository.</a>\n\n
+
+        Vielen Dank, dass Sie den Vityanki Bot verwenden! Viel Spaß beim Lernen!"
+  back_to_main_menu: "← Zurück"
+  donate: "💛 Unterstützen"

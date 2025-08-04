@@ -5,5 +5,5 @@ The view of the states should be not from the point of view of the user, but fro
 Example: The bot is waiting for the user to select a language, and then it completes the registration.
 '''
 
-class Registration(StatesGroup):
+class InterfaceLanguage(StatesGroup):
     waiting_for_language = State()
