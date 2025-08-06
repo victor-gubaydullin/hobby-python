@@ -2,7 +2,7 @@ from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
 from aiogram.filters import CommandStart
 from aiogram.fsm.context import FSMContext
-from services.user_services import process_start_command, process_interface_language_selection, process_main_menu_trigger, process_settings_trigger, process_about_trigger
+from services.user_services import process_start_command, process_interface_language_selection, process_main_menu_trigger, process_settings_trigger, process_about_trigger, process_settings_language_selection
 
 user_router = Router()
 
@@ -30,6 +30,12 @@ async def main_menu_handler(callback: CallbackQuery):
 async def setting_handler(callback: CallbackQuery):
     reply_text, reply_keyboard = await process_settings_trigger(callback)
 
+    await callback.message.edit_text(reply_text, reply_markup=reply_keyboard)
+    await callback.answer()
+
+@user_router.callback_query(F.data == "change_language")
+async def change_language_handler(callback: CallbackQuery, state: FSMContext):
+    reply_text, reply_keyboard = await process_settings_language_selection(state)
     await callback.message.edit_text(reply_text, reply_markup=reply_keyboard)
     await callback.answer()
 
