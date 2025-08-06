@@ -1,4 +1,5 @@
 aiogram
 dotenv
 sqlalchemy
+pathlib
 pyyaml

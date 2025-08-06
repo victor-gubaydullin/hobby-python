@@ -22,16 +22,16 @@ help:
 
 about:
   text: "Vityanki Bot ist ein Telegram-Bot, der entwickelt wurde, um
-        Ihnen zu helfen, neue Sprachen effektiv zu lernen, indem Sie auf zeitlich abgestimmte Wiederholungen und benutzerdefinierte Karteikarten zurückgreifen.\n\n
-          
-        Er basiert auf der Ebbinghaus Vergessenskurve, um Ihren Lernprozess zu optimieren. \n\n
-        Der Bot ermöglicht es Ihnen, Wortsets zu erstellen, zu bearbeiten und zu löschen, sie zu lernen und Erinnerungen für optimale Wiederholungszeiten zu erhalten.\n\n
+        Ihnen zu helfen, neue Sprachen effektiv zu lernen, indem Sie auf zeitlich abgestimmte Wiederholungen und benutzerdefinierte Karteikarten zurückgreifen.
+        Er basiert auf der Ebbinghaus Vergessenskurve, um Ihren Lernprozess zu optimieren.\n
+        
+        Der Bot ermöglicht es Ihnen, Wortsets zu erstellen, zu bearbeiten und zu löschen, sie zu lernen und Erinnerungen für optimale Wiederholungszeiten zu erhalten.\n
           
         Wenn Ihnen der Bot gefällt, ziehen Sie bitte in Betracht, seine Entwicklung durch eine Spende zu unterstützen
-        oder den Bot mit Ihren Freunden und Sprachlerngemeinschaften zu teilen.\n\n
+        oder den Bot mit Ihren Freunden und Sprachlerngemeinschaften zu teilen.\n
           
         Alternativ können Sie zum Projekt auf GitHub beitragen, indem Sie Probleme melden oder Verbesserungen vorschlagen auf
-        dem <a href=\"https://github.com/victor-gubaydullin/hobby-python/vityanki\">GitHub-Repository.</a>\n\n
+        dem <a href=\"https://github.com/victor-gubaydullin/hobby-python/vityanki\">GitHub-Repository.</a>\n
 
         Vielen Dank, dass Sie den Vityanki Bot verwenden! Viel Spaß beim Lernen!"
   back_to_main_menu: "← Zurück"
