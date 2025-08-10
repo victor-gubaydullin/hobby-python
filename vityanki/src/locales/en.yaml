@@ -10,6 +10,8 @@ main_menu:
   delete_word_set: "🗑️ Delete word set"
   settings: "⚙️ Settings"
   help: "❓ Help"
+  top_donators: "🏆 Top donators"
+  donate: "💛 Support"
   about: "ℹ️ About"
 
 settings:
@@ -36,3 +38,36 @@ about:
          Thank you for using Vityanki Bot! Happy learning!"
   back_to_main_menu: "← Back"
   donate: "💛 Support"
+
+donate:
+  text: "If you find Vityanki Bot helpful and would like to support its development, you can make a donation.  
+         Your support helps keep the project alive and allows for continuous improvements and new features like the upcoming 🗣️ voicing of your flashcards!  
+         Things like that require certain payments from my side, so your support is highly appreciated!  
+
+         After you've made a donation, you can also send me a message with any feedback or suggestions you have, and I will be happy to hear from you!  
+
+         You can donate simply in Telegram via the CryptoBot (@CryptoBot, @send) or make a direct donation to one of the wallets you can select below.\n
+         
+         If you choose to be displayed in the list of donators, please provide your nickname in the message to the bot when he asks you, so I can add you to the list of top donators 🏆.  
+         Otherwise, you can remain anonymous. Please note that in case you donate directly to one of the wallets, I will need some time to manually add you to the list,  
+         so please don't worry if you don't see yourself in the list immediately.\n"
+  back_to_main_menu: "← Main menu"
+  cryptobot: "🔵 CryptoBot"
+  crypto_wallets: "🔗 Direct transfer"
+  crypto_wallets_text: "Feel free to make a direct transfer to one of the wallets below! 🔗\n
+                        ₿ BTC: <code>bc1q3k5f4g6v7h8j9k0l1m2n3o4p5q6r7s8t9u0v1w2x3y4z5a6b7c8d9e0f1g2h3i4j5k6l7m8n9o0p1q2r3s4t5u6v7w8x9y0z</code>\n
+                        Ξ ETH: <code>0x1234567890abcdef1234567890abcdef12345678</code>\n
+                        💵 USDT: <code>0xabcdef1234567890abcdef1234567890abcdef12</code>\n
+                        💵 USDC: <code>0xabcdef1234567890abcdef1234567890abcdef12</code>\n
+                        Ł LTC: <code>ltc1q3k5f4g6v7h8j9k0l1m2n3o4p5q6r7s8t9u0v1w2x3y4z5a6b7c8d9e0f1g2h3i4j5k6l7m8n9o0p1q2r3s4t5u6v7w8x9y0z</code>\n
+                        🟡 BNB: <code>bnb1q3k5f4g6v7h8j9k0l1m2n3o4p5q6r7s8t9u0v1w2x3y4z5a6b7c8d9e0f1g2h3i4j5k6l7m8n9o0p1q2r3s4t5u6v7w8x9y0z</code>\n
+                        💠 XRP: <code>r1234567890abcdef1234567890abcdef12345678</code>\n
+                        🐶 DOGE: <code>DJ1234567890abcdef1234567890abcdef12345678</code>\n
+                        If you choose to be displayed in the list of donators, please provide your nickname 🏷️, the currency you send 💱, as well as your public crypto-address 🔗 in the message to the bot when he asks you, so I can add you to the list of top donators 🏆.  
+                        Otherwise, you can remain anonymous.  
+                        Please note that I will need some time to manually add you to the list of donators, so please don't worry ⏳ if you don't see yourself in the list immediately."
+  top_donators: "🏆 Top donators"
+  top_donators_text: "🏆 Here are the people that prove that my work is valued and appreciated:\n"
+  thanks: "💖 Thank you for your support! 💖"
+  anonymous: "🙈 Anonymous"
+  public: "📝 Enter my details"

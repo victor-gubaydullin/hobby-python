@@ -18,6 +18,10 @@ def main_menu_keyboard(language_code) -> InlineKeyboardMarkup:
             InlineKeyboardButton(text=t(language_code, "main_menu.help"), callback_data="help"),
         ],
         [
+            InlineKeyboardButton(text=t(language_code, "main_menu.top_donators"), callback_data="top_donators"),
+            InlineKeyboardButton(text=t(language_code, "main_menu.donate"), callback_data="donate"),
+        ],
+        [
             InlineKeyboardButton(text=t(language_code, "main_menu.about"), callback_data="about"),
         ]
     ]
