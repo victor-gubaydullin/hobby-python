@@ -1,8 +1,8 @@
 import os
 from logger import setup_logging
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 from .data_models import Base
+from . import data_events
 
 logger = setup_logging('data_init')
 
@@ -11,13 +11,15 @@ logger.info(f"Database path set to: {db_path}")
 
 if not os.path.exists(db_path):
     logger.info(f"Creating database directory: {db_path}")
-    os.makedirs(os.path.dirname(db_path), exist_ok=True)
+    os.makedirs(db_path, exist_ok=True)
 
-DATABASE_URL = f"sqlite:///{os.path.join(db_path, "database.db")}"
+DATABASE_URL = f"sqlite+aiosqlite:///{os.path.join(db_path, 'database.db')}"
 logger.info(f"Database URL: {DATABASE_URL}")
 
-engine = create_engine(DATABASE_URL, echo=False, future=True)
-SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+engine = create_async_engine(DATABASE_URL, echo=False, future=True)
+data_events.register_db_listeners(engine)
+SessionLocal = async_sessionmaker(bind=engine, autoflush=False, class_=AsyncSession, expire_on_commit=False)
 
-def init_db():
-    Base.metadata.create_all(bind=engine)
+async def init_db():
+    async with engine.begin() as connection:
+        await connection.run_sync(Base.metadata.create_all)
