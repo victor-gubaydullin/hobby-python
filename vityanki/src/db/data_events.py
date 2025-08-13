@@ -1,7 +1,5 @@
 from sqlalchemy import event, select, delete
 from sqlalchemy.orm import Session
-#from sqlalchemy.ext.asyncio import AsyncSession
-#from sqlalchemy.engine import Engine
 from db.data_models import Donator, Donation
 from logger import setup_logging
 
