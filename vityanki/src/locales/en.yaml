@@ -2,7 +2,7 @@ registration:
   language_selected: "Language selected. You are now ready to use the bot! Check the commands to get started."
 
 main_menu:
-  greetings: "Welcome to Vityanki Bot! Learn any new language with ease with your custom flashcards 
+  message: "Welcome to Vityanki Bot! Learn any new language with ease with your custom flashcards 
               and get reminded when you need to repeat them to get most impact in shortest term via Ebbinghaus Forgetting Curve method."
   study_word_set: "📖 Study word set"
   add_word_set: "➕ Add word set"
@@ -15,16 +15,16 @@ main_menu:
   about: "ℹ️ About"
 
 settings:
-  text: "Here you can change the common settings of the bot."
+  message: "Here you can change the common settings of the bot."
   back_to_main_menu: "← Back"
   interface_language: "🌐 Language"
 
 help:
-  text: "Here you can find information on how to use the bot and the available commands."
+  message: "Here you can find information on how to use the bot and the available commands."
   back_to_main_menu: "← Back"
 
 about:
-  text: "Vityanki Bot is a Telegram bot designed to help you learn new languages effectively using spaced repetition and custom flashcards. 
+  message: "Vityanki Bot is a Telegram bot designed to help you learn new languages effectively using spaced repetition and custom flashcards. 
          It is based on the Ebbinghaus Forgetting Curve method to optimize your learning process.\n
          
          The bot allows you to create, edit, and delete word sets, study them, and receive reminders for optimal review times.\n
@@ -40,7 +40,7 @@ about:
   donate: "💛 Support"
 
 donate:
-  text: "If you find Vityanki Bot helpful and would like to support its development, you can make a donation.  
+  message: "If you find Vityanki Bot helpful and would like to support its development, you can make a donation.  
          Your support helps keep the project alive and allows for continuous improvements and new features like the upcoming 🗣️ voicing of your flashcards!  
          Things like that require certain payments from my side, so your support is highly appreciated!  
 
@@ -52,67 +52,93 @@ donate:
          Otherwise, you can remain anonymous. Please note that in case you donate directly to one of the wallets, I will need some time to manually add you to the list,  
          so please don't worry if you don't see yourself in the list immediately.\n"
   back_to_main_menu: "← Main menu"
-  cryptobot: "🔵 CryptoBot"
+  cryptobot:
+    button_label: "🔵 CryptoBot"
   crypto_wallets:
-    button: "🔗 Direct transfer"
+    button_label: "🔗 Direct transfer"
     message: "Feel free to make a direct transfer to one of the wallets you can select below! 🔗\n
               If you choose to be displayed in the list of donators, please provide your nickname 🏷️, the currency you send 💱, as well as your public crypto-address 🔗 in the message to the bot when he asks you, so I can add you to the list of top donators 🏆.  
               Otherwise, you can remain anonymous.  
               Please note that I will need some time to manually add you to the list of donators, so please don't worry ⏳ if you don't see yourself in the list immediately."
-    BTC: "₿ BTC"
-    ETH: "Ξ ETH"
+    BTC:
+      button_label: "₿ BTC"
+    ETH:
+      button_label: "Ξ ETH"
     USDT:
-      button: "💵 USDT"
+      button_label: "💵 USDT"
       message: "Please select the blockchain for your USDT donation. This is extremely important, as USDT is available on multiple blockchains.
                 If you are not sure which one to choose, you can check by looking up your coin at the wallet or exchange you use."
-      ERC20: "Ethereum (ERC-20)"
-      TRC20: "TRON (TRC-20)"
-      BEP20: "BSC (BEP-20)"
-      POLYGON: "Polygon (ERC-20)"
-      ARBITRUM: "Arbitrum (ERC-20)"
-      OPTIMISM: "Optimism (ERC-20)"
-      BASE: "Base (ERC-20)"
-      AVALANCHE: "Avalanche C-Chain (ERC-20)"
+      blockchains:
+        ERC20: "Ethereum (ERC-20)"
+        TRC20: "TRON (TRC-20)"
+        BEP20: "BSC (BEP-20)"
+        POLYGON: "Polygon (ERC-20)"
+        ARBITRUM: "Arbitrum (ERC-20)"
+        OPTIMISM: "Optimism (ERC-20)"
+        BASE: "Base (ERC-20)"
+        AVALANCHE: "Avalanche C-Chain (ERC-20)"
     USDC:
-      button: "💵 USDC"
+      button_label: "💵 USDC"
       message: "Please select the blockchain for your USDC donation. This is extremely important, as USDC is available on multiple blockchains.
                 If you are not sure which one to choose, you can check by looking up your coin at the wallet or exchange you use."
-      ERC20: "Ethereum (ERC-20)"
-      TRC20: "TRON (TRC-20)"
-      BEP20: "BSC (BEP-20)"
-      POLYGON: "Polygon (ERC-20)"
-      ARBITRUM: "Arbitrum (ERC-20)"
-      OPTIMISM: "Optimism (ERC-20)"
-      BASE: "Base (ERC-20)"
-      AVALANCHE: "Avalanche C-Chain (ERC-20)"
-    TON: "💎 TON"
-    BNB: "🟡 BNB"
-    TRX: "🔺 TRX"
-    SOL: "🟠 SOL"
-    XRP: "💠 XRP"
-    DOGE: "🐶 DOGE"
-    MATIC: "🔵 MATIC"
-    LTC: "Ł LTC"
-    ADA: "🟣 ADA"
+      blockchains:
+        ERC20: "Ethereum (ERC-20)"
+        TRC20: "TRON (TRC-20)"
+        BEP20: "BSC (BEP-20)"
+        POLYGON: "Polygon (ERC-20)"
+        ARBITRUM: "Arbitrum (ERC-20)"
+        OPTIMISM: "Optimism (ERC-20)"
+        BASE: "Base (ERC-20)"
+        AVALANCHE: "Avalanche C-Chain (ERC-20)"
+    TON:
+      button_label: "💎 TON"
+    BNB:
+      button_label: "🟡 BNB"
+    TRX:
+      button_label: "🔺 TRX"
+    SOL:
+      button_label: "🟠 SOL"
+    XRP:
+      button_label: "💠 XRP"
+    DOGE:
+      button_label: "🐶 DOGE"
+    MATIC:
+      button_label: "🔵 MATIC"
+    LTC:
+      button_label: "Ł LTC"
+    ADA:
+      button_label: "🟣 ADA"
   crypto_blockchain:
-    button: "🔗 See all blockchains"
+    button_label: "🔗 See all blockchains"
     message: "Please select the blockchain for your crypto donation.  
               If you are not sure which one to choose, you can check by looking up your coin name or address
               on your wallet or exchange, or use a service like coinmarketcap.com or coingecko.com"
     back_to_wallets: "← Back to coins"
-    Ethereum_ERC20: "Ethereum (ERC-20)"
-    BSC_BEP20: "BSC (BEP-20)"
-    Polygon_ERC20: "Polygon (ERC-20)"
-    Arbitrum_ERC20: "Arbitrum (ERC-20)"
-    Optimism_ERC20: "Optimism (ERC-20)"
-    Base_ERC20: "Base (ERC-20)"
-    Avalanche_CChain_ERC20: "Avalanche C-Chain (ERC-20)"
-    TRON_TRC20: "TRON (TRC-20)"
-    Solana_SPL: "Solana (SPL)"
-    XRP_Ledger: "XRP Ledger"
-  top_donators: "🏆 Top donators"
-  top_donators_text: "🏆 Here are the people that prove that my work is valued and appreciated:\n"
-  thanks: "💖 Thank you for your support! 💖"
+    Ethereum_ERC20:
+      button_label: "Ethereum (ERC-20)"
+    BSC_BEP20:
+      button_label: "BSC (BEP-20)"
+    Polygon_ERC20:
+      button_label: "Polygon (ERC-20)"
+    Arbitrum_ERC20:
+      button_label: "Arbitrum (ERC-20)"
+    Optimism_ERC20:
+      button_label: "Optimism (ERC-20)"
+    Base_ERC20:
+      button_label: "Base (ERC-20)"
+    Avalanche_CChain_ERC20:
+      button_label: "Avalanche C-Chain (ERC-20)"
+    TRON_TRC20:
+      button_label: "TRON (TRC-20)"
+    Solana_SPL:
+      button_label: "Solana (SPL)"
+    XRP_Ledger:
+      button_label: "XRP Ledger"
+  top_donators:
+    button_label: "🏆 Top donators"
+    message: "🏆 Here are the people that prove that my work is valued and appreciated:\n"
+  thanks:
+    message: "💖 Thank you for your support! 💖"
   anonymous: "🙈 Anonymous"
   public: "📝 Enter my details"
   buffer_note: "I apply a small 0.5% safety buffer in your favor (rounding the crypto amount slightly down) so you never accidentally overpay due to price swings or fees."

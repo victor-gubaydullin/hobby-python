@@ -8,7 +8,7 @@ from locales.translation import t
 async def process_donate_command(callback: CallbackQuery, state: FSMContext):
     language_code = await get_user_interface_language(callback.from_user.id)
     
-    reply_text = t(language_code, "donate.text")
+    reply_text = t(language_code, "donate.message")
     reply_keyboard = donate_keyboard(language_code)
 
     await state.set_state(Donation.waiting_for_preferred_donation_method)

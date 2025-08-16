@@ -41,21 +41,21 @@ async def process_interface_language_selection(callback: CallbackQuery, state: F
 
 async def process_main_menu_trigger(callback: CallbackQuery):
     language_code = await get_user_interface_language(callback.from_user.id)
-    reply_text = t(language_code, "main_menu.greetings")
+    reply_text = t(language_code, "main_menu.message")
     reply_keyboard = main_menu_keyboard(language_code)
 
     return reply_text, reply_keyboard
 
 async def process_settings_trigger(callback: CallbackQuery):
     language_code = await get_user_interface_language(callback.from_user.id)
-    reply_text = t(language_code, "settings.text")
+    reply_text = t(language_code, "settings.message")
     reply_keyboard = settings_keyboard(language_code)
 
     return reply_text, reply_keyboard
 
 async def process_about_trigger(callback: CallbackQuery):
     language_code = await get_user_interface_language(callback.from_user.id)
-    reply_text = t(language_code, "about.text")
+    reply_text = t(language_code, "about.message")
     reply_keyboard = about_keyboard(language_code)
 
     return reply_text, reply_keyboard
