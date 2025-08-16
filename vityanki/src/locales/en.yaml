@@ -53,21 +53,66 @@ donate:
          so please don't worry if you don't see yourself in the list immediately.\n"
   back_to_main_menu: "← Main menu"
   cryptobot: "🔵 CryptoBot"
-  crypto_wallets: "🔗 Direct transfer"
-  crypto_wallets_text: "Feel free to make a direct transfer to one of the wallets below! 🔗\n
-                        ₿ BTC: <code>bc1q3k5f4g6v7h8j9k0l1m2n3o4p5q6r7s8t9u0v1w2x3y4z5a6b7c8d9e0f1g2h3i4j5k6l7m8n9o0p1q2r3s4t5u6v7w8x9y0z</code>\n
-                        Ξ ETH: <code>0x1234567890abcdef1234567890abcdef12345678</code>\n
-                        💵 USDT: <code>0xabcdef1234567890abcdef1234567890abcdef12</code>\n
-                        💵 USDC: <code>0xabcdef1234567890abcdef1234567890abcdef12</code>\n
-                        Ł LTC: <code>ltc1q3k5f4g6v7h8j9k0l1m2n3o4p5q6r7s8t9u0v1w2x3y4z5a6b7c8d9e0f1g2h3i4j5k6l7m8n9o0p1q2r3s4t5u6v7w8x9y0z</code>\n
-                        🟡 BNB: <code>bnb1q3k5f4g6v7h8j9k0l1m2n3o4p5q6r7s8t9u0v1w2x3y4z5a6b7c8d9e0f1g2h3i4j5k6l7m8n9o0p1q2r3s4t5u6v7w8x9y0z</code>\n
-                        💠 XRP: <code>r1234567890abcdef1234567890abcdef12345678</code>\n
-                        🐶 DOGE: <code>DJ1234567890abcdef1234567890abcdef12345678</code>\n
-                        If you choose to be displayed in the list of donators, please provide your nickname 🏷️, the currency you send 💱, as well as your public crypto-address 🔗 in the message to the bot when he asks you, so I can add you to the list of top donators 🏆.  
-                        Otherwise, you can remain anonymous.  
-                        Please note that I will need some time to manually add you to the list of donators, so please don't worry ⏳ if you don't see yourself in the list immediately."
+  crypto_wallets:
+    button: "🔗 Direct transfer"
+    message: "Feel free to make a direct transfer to one of the wallets you can select below! 🔗\n
+              If you choose to be displayed in the list of donators, please provide your nickname 🏷️, the currency you send 💱, as well as your public crypto-address 🔗 in the message to the bot when he asks you, so I can add you to the list of top donators 🏆.  
+              Otherwise, you can remain anonymous.  
+              Please note that I will need some time to manually add you to the list of donators, so please don't worry ⏳ if you don't see yourself in the list immediately."
+    BTC: "₿ BTC"
+    ETH: "Ξ ETH"
+    USDT:
+      button: "💵 USDT"
+      message: "Please select the blockchain for your USDT donation. This is extremely important, as USDT is available on multiple blockchains.
+                If you are not sure which one to choose, you can check by looking up your coin at the wallet or exchange you use."
+      ERC20: "Ethereum (ERC-20)"
+      TRC20: "TRON (TRC-20)"
+      BEP20: "BSC (BEP-20)"
+      POLYGON: "Polygon (ERC-20)"
+      ARBITRUM: "Arbitrum (ERC-20)"
+      OPTIMISM: "Optimism (ERC-20)"
+      BASE: "Base (ERC-20)"
+      AVALANCHE: "Avalanche C-Chain (ERC-20)"
+    USDC:
+      button: "💵 USDC"
+      message: "Please select the blockchain for your USDC donation. This is extremely important, as USDC is available on multiple blockchains.
+                If you are not sure which one to choose, you can check by looking up your coin at the wallet or exchange you use."
+      ERC20: "Ethereum (ERC-20)"
+      TRC20: "TRON (TRC-20)"
+      BEP20: "BSC (BEP-20)"
+      POLYGON: "Polygon (ERC-20)"
+      ARBITRUM: "Arbitrum (ERC-20)"
+      OPTIMISM: "Optimism (ERC-20)"
+      BASE: "Base (ERC-20)"
+      AVALANCHE: "Avalanche C-Chain (ERC-20)"
+    TON: "💎 TON"
+    BNB: "🟡 BNB"
+    TRX: "🔺 TRX"
+    SOL: "🟠 SOL"
+    XRP: "💠 XRP"
+    DOGE: "🐶 DOGE"
+    MATIC: "🔵 MATIC"
+    LTC: "Ł LTC"
+    ADA: "🟣 ADA"
+  crypto_blockchain:
+    button: "🔗 See all blockchains"
+    message: "Please select the blockchain for your crypto donation.  
+              If you are not sure which one to choose, you can check by looking up your coin name or address
+              on your wallet or exchange, or use a service like coinmarketcap.com or coingecko.com"
+    back_to_wallets: "← Back to coins"
+    Ethereum_ERC20: "Ethereum (ERC-20)"
+    BSC_BEP20: "BSC (BEP-20)"
+    Polygon_ERC20: "Polygon (ERC-20)"
+    Arbitrum_ERC20: "Arbitrum (ERC-20)"
+    Optimism_ERC20: "Optimism (ERC-20)"
+    Base_ERC20: "Base (ERC-20)"
+    Avalanche_CChain_ERC20: "Avalanche C-Chain (ERC-20)"
+    TRON_TRC20: "TRON (TRC-20)"
+    Solana_SPL: "Solana (SPL)"
+    XRP_Ledger: "XRP Ledger"
   top_donators: "🏆 Top donators"
   top_donators_text: "🏆 Here are the people that prove that my work is valued and appreciated:\n"
   thanks: "💖 Thank you for your support! 💖"
   anonymous: "🙈 Anonymous"
   public: "📝 Enter my details"
+  buffer_note: "I apply a small 0.5% safety buffer in your favor (rounding the crypto amount slightly down) so you never accidentally overpay due to price swings or fees."

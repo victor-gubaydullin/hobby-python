@@ -23,6 +23,11 @@ class Donator(Base):
         cascade="all, delete-orphan"
     )
 
+    def to_string(self, total_donated=None):
+        # Need to add currency handling
+        return f"{self.nickname} ({'Anonymous' if self.is_anonymous else self.nickname}): {total_donated or 0:.2f}"
+
+
 class Donation(Base):
     __tablename__ = "donations"
 
@@ -35,6 +40,8 @@ class Donation(Base):
     crypto_name: Mapped[str] = mapped_column(String(32), nullable=False)
     crypto_wallet: Mapped[str] = mapped_column(String(128), nullable=False)
     feedback_message: Mapped[str] = mapped_column(String(512), nullable=True)
+    amount_raw: Mapped[float] = mapped_column(nullable=False)
+    amount_usd: Mapped[float] = mapped_column(nullable=True)
 
     # One donation belongs to one donator.
     donator: Mapped["Donator"] = relationship(
