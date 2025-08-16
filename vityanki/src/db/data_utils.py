@@ -22,17 +22,22 @@ async def set_user_interface_language(telegram_id, language):
         await session.commit()
 
 async def get_top_donators(n=14):
+    """
+    Get the top N donators based on the total amount donated in USD.
+    Returns list of tuples: (Donator, total_donated)
+    """
     async with SessionLocal() as session:
         query = (
             select(
                 Donator,
-                func.sum(Donation.amount).label("total_donated")
+                func.sum(Donation.amount_usd).label("total_donated")
             )
             .join(Donation, Donator.donator_id == Donation.donator_id)
             .group_by(Donator.donator_id)
-            .order_by(func.sum(Donation.amount).desc())
+            .order_by(func.sum(Donation.amount_usd).desc())
             .limit(n)
         )
-        results = session.execute(query).all()
-        # Returns list of tuples: (Donator, total_donated)
-        return results
+        # Need to wait for the result to be fetched when using async
+        temp_result = await session.execute(query)
+        result = temp_result.all()
+        return result

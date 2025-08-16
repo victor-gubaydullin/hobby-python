@@ -1,8 +1,8 @@
 from aiogram.types import CallbackQuery
 from aiogram.fsm.context import FSMContext
 from states.donation import Donation
-from db.data_utils import get_user_interface_language
-from keyboards.donate import donate_keyboard, donate_crypto_wallets_keyboard, donate_crypto_blockchain_keyboard
+from db.data_utils import get_user_interface_language, get_top_donators
+from keyboards.donate import donate_keyboard, donate_crypto_wallets_keyboard, donate_crypto_blockchain_keyboard, donate_top_donators_keyboard
 from locales.translation import t
 
 async def process_donate_command(callback: CallbackQuery, state: FSMContext):
@@ -12,6 +12,20 @@ async def process_donate_command(callback: CallbackQuery, state: FSMContext):
     reply_keyboard = donate_keyboard(language_code)
 
     await state.set_state(Donation.waiting_for_preferred_donation_method)
+    return reply_text, reply_keyboard
+
+async def process_top_donators_display(callback: CallbackQuery, state: FSMContext):
+    language_code = await get_user_interface_language(callback.from_user.id)
+
+    reply_text = t(language_code, "donate.top_donators.message") + "\n"
+    reply_keyboard = donate_top_donators_keyboard(language_code)
+
+    top_donators = await get_top_donators()
+    donator_rank = 1
+    for donator, total_amount in top_donators:
+        reply_text += f"{donator_rank}) {donator.to_string(total_amount)}\n"    
+        donator_rank += 1
+
     return reply_text, reply_keyboard
 
 async def process_crypto_wallets_selection(callback: CallbackQuery, state: FSMContext):

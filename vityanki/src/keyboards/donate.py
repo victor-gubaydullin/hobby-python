@@ -16,6 +16,16 @@ def donate_keyboard(language_code: str) -> InlineKeyboardMarkup:
     all_buttons = [donate_options_buttons] + [top_donators_button] + [control_buttons]
     return InlineKeyboardMarkup(inline_keyboard=all_buttons)
 
+def donate_top_donators_keyboard(language_code) -> InlineKeyboardMarkup:
+    donate_buttons = [
+        InlineKeyboardButton(text=t(language_code, "donate.top_donators.donate"), callback_data="donate"),
+    ]
+    control_buttons = [
+        InlineKeyboardButton(text=t(language_code, "donate.back_to_main_menu"), callback_data="main_menu"),
+    ]
+    
+    return InlineKeyboardMarkup(inline_keyboard=[donate_buttons, control_buttons])
+
 def donate_crypto_wallets_keyboard(language_code) -> InlineKeyboardMarkup:
     crypto_wallets_buttons = [
         InlineKeyboardButton(text=t(language_code, "donate.crypto_wallets.BTC.button_label"), callback_data="BTC"),

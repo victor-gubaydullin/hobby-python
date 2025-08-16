@@ -8,6 +8,9 @@
 *.log
 logs/
 
+# Test scripts
+pseudo_usage/
+
 # Email rewrite
 #  This file is used to rewrite email addresses in git history.
 *.gitmailmap

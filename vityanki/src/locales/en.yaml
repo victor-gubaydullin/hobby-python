@@ -136,6 +136,7 @@ donate:
       button_label: "XRP Ledger"
   top_donators:
     button_label: "🏆 Top donators"
+    donate: "💛 Get on the list"
     message: "🏆 Here are the people that prove that my work is valued and appreciated:\n"
   thanks:
     message: "💖 Thank you for your support! 💖"
