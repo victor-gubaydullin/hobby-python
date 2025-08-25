@@ -10,7 +10,7 @@ def donate_keyboard(language_code: str) -> InlineKeyboardMarkup:
         InlineKeyboardButton(text=t(language_code, "donate.top_donators.button_label"), callback_data="top_donators"),
     ]
     control_buttons = [
-        InlineKeyboardButton(text=t(language_code, "donate.back_to_main_menu"), callback_data="main_menu"),
+        InlineKeyboardButton(text=t(language_code, "navigation.back"), callback_data="main_menu"),
     ]
 
     all_buttons = [donate_options_buttons] + [top_donators_button] + [control_buttons]
@@ -21,7 +21,7 @@ def donate_top_donators_keyboard(language_code) -> InlineKeyboardMarkup:
         InlineKeyboardButton(text=t(language_code, "donate.top_donators.donate"), callback_data="donate"),
     ]
     control_buttons = [
-        InlineKeyboardButton(text=t(language_code, "donate.back_to_main_menu"), callback_data="main_menu"),
+        InlineKeyboardButton(text=t(language_code, "navigation.back_to_main_menu"), callback_data="main_menu"),
     ]
     
     return InlineKeyboardMarkup(inline_keyboard=[donate_buttons, control_buttons])
@@ -43,7 +43,7 @@ def donate_crypto_wallets_keyboard(language_code) -> InlineKeyboardMarkup:
         # InlineKeyboardButton(text=t(language_code, "donate.crypto_wallets.MATIC.button_label"), callback_data="MATIC"),
     ]
     control_buttons = [
-            InlineKeyboardButton(text=t(language_code, "donate.back_to_main_menu"), callback_data="main_menu"),
+            InlineKeyboardButton(text=t(language_code, "navigation.back"), callback_data="main_menu"),
             #InlineKeyboardButton(text=t(language_code, "donate.previous_crypto_list"), callback_data="previous_crypto_list"),
             #InlineKeyboardButton(text=t(language_code, "donate.next_crypto_list"), callback_data="next_crypto_list"),
             InlineKeyboardButton(text=t(language_code, "donate.crypto_blockchain.button_label"), callback_data="crypto_blockchain"),
@@ -67,8 +67,8 @@ def donate_crypto_blockchain_keyboard(language_code) -> InlineKeyboardMarkup:
         InlineKeyboardButton(text=t(language_code, "donate.crypto_blockchain.XRP_Ledger.button_label"), callback_data="XRP_Ledger"),
     ]
     control_buttons = [
-            InlineKeyboardButton(text=t(language_code, "donate.back_to_main_menu"), callback_data="main_menu"),
-            InlineKeyboardButton(text=t(language_code, "donate.crypto_blockchain.back_to_wallets"), callback_data="crypto_wallets"),
+            InlineKeyboardButton(text=t(language_code, "navigation.back_to_main_menu"), callback_data="main_menu"),
+            InlineKeyboardButton(text=t(language_code, "navigation.back"), callback_data="crypto_wallets"),
     ]
     all_buttons = [blockchain_buttons[i:i+2] for i in range(0, len(blockchain_buttons), 2)] + [control_buttons]
 

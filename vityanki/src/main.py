@@ -3,6 +3,7 @@ from aiogram import Dispatcher
 from bot_instance import bot
 from db.data_init import init_db
 from handlers.user_handlers import user_router
+from handlers.student_handlers import student_router
 from handlers.donator_handlers import donator_router
 from pseudo_usage.pseudo_donators import create_pseudo_donators
 
@@ -14,7 +15,7 @@ async def main():
     # Create pseudo donators and donations for testing purposes
     # await create_pseudo_donators()
     
-    dp.include_routers(user_router, donator_router)
+    dp.include_routers(user_router, student_router, donator_router)
     await dp.start_polling(bot)
 
 if __name__ == "__main__":

@@ -4,6 +4,8 @@ registration:
 main_menu:
   message: "Welcome to Vityanki Bot! Learn any new language with ease with your custom flashcards 
               and get reminded when you need to repeat them to get most impact in shortest term via Ebbinghaus Forgetting Curve method."
+  study: "📖 My sets"
+  stats: "📊 My stats"
   study_word_set: "📖 Study word set"
   add_word_set: "➕ Add word set"
   edit_word_set: "✏️ Edit word set"
@@ -14,14 +16,39 @@ main_menu:
   donate: "💛 Support"
   about: "ℹ️ About"
 
+navigation:
+  back: "← Back"
+  back_to_main_menu: "← Main menu"
+  confirm: "✅ Confirm"
+  cancel: "❌ Cancel"
+
+wordset:
+  study_wordset: "📖 Study word set"
+  add_wordset: "➕ Add word set"
+  edit_wordset: "✏️ Edit word set"
+  delete_wordset: "🗑️ Delete word set"
+  messages:
+    main_menu_message: "Start learning new words here! You can manage your word sets: add new ones, edit, or delete."
+    add_prompt: "Please send me the name of the new word set you want to add."
+    add_success: "Word set <b>{wordset_name}</b> added successfully! You can now start adding words to it."
+    add_failure: "A word set with the name <b>{wordset_name}</b> already exists. Please choose a different name."
+    edit_prompt: "Please select the word set you want to edit."
+    edit_name_prompt: "Please send me the new name for the word set <b>{wordset_name}</b>."
+    edit_name_success: "Word set renamed to <b>{new_wordset_name}</b> successfully!"
+    edit_name_failure: "A word set with the name <b>{new_wordset_name}</b> already exists. Please choose a different name."
+    delete_prompt: "Please select the word set you want to delete."
+    delete_confirm: "Are you sure you want to delete the word set <b>{wordset_name}</b>? This action cannot be undone."
+    delete_success: "Word set <b>{wordset_name}</b> deleted successfully!"
+    empty: "You have no word sets yet. Use the button below to add your first word set."
+    no_wordsets: "You have no word sets. Please add a word set first."
+    no_words: "The word set <b>{wordset_name}</b> has no words yet. Please add some words first."
+
 settings:
   message: "Here you can change the common settings of the bot."
-  back_to_main_menu: "← Back"
   interface_language: "🌐 Language"
 
 help:
   message: "Here you can find information on how to use the bot and the available commands."
-  back_to_main_menu: "← Back"
 
 about:
   message: "Vityanki Bot is a Telegram bot designed to help you learn new languages effectively using spaced repetition and custom flashcards. 
@@ -36,7 +63,6 @@ about:
          the <a href=\"https://github.com/victor-gubaydullin/hobby-python/vityanki\">GitHub repository.</a>\n
 
          Thank you for using Vityanki Bot! Happy learning!"
-  back_to_main_menu: "← Back"
   donate: "💛 Support"
 
 donate:
@@ -51,7 +77,6 @@ donate:
          If you choose to be displayed in the list of donators, please provide your nickname in the message to the bot when he asks you, so I can add you to the list of top donators 🏆.  
          Otherwise, you can remain anonymous. Please note that in case you donate directly to one of the wallets, I will need some time to manually add you to the list,  
          so please don't worry if you don't see yourself in the list immediately.\n"
-  back_to_main_menu: "← Main menu"
   cryptobot:
     button_label: "🔵 CryptoBot"
   crypto_wallets:
