@@ -7,6 +7,7 @@ from keyboards.interface_language import language_selection_keyboard
 from keyboards.main_menu import main_menu_keyboard
 from keyboards.settings import settings_keyboard
 from keyboards.about import about_keyboard
+from keyboards.help import help_keyboard
 from db.data_utils import set_user_interface_language, get_user_interface_language
 
 async def get_language_selection_prompt():
@@ -50,6 +51,14 @@ async def process_settings_trigger(callback: CallbackQuery):
     language_code = await get_user_interface_language(callback.from_user.id)
     reply_text = t(language_code, "settings.message")
     reply_keyboard = settings_keyboard(language_code)
+
+    return reply_text, reply_keyboard
+
+async def process_help_trigger(callback: CallbackQuery):
+    language_code = await get_user_interface_language(callback.from_user.id)
+    
+    reply_text = t(language_code, "help.message")
+    reply_keyboard = help_keyboard(language_code)
 
     return reply_text, reply_keyboard
 
