@@ -2,14 +2,11 @@ registration:
   language_selected: "Language selected. You are now ready to use the bot! Check the commands to get started."
 
 main_menu:
-  message: "Welcome to Vityanki Bot! Learn any new language with ease with your custom flashcards 
-              and get reminded when you need to repeat them to get most impact in shortest term via Ebbinghaus Forgetting Curve method."
-  study: "📖 My sets"
+  message: "Welcome to Vityanki Bot! Learn anything you want using your custom flashcards and get reminded when you need to repeat them to get most impact in shortest term via Ebbinghaus Forgetting Curve method.
+            Willing to learn a new language? Or maybe you want to memorize some historical dates, scientific terms, or even your shopping list? The choice is yours!
+            Start by adding a new flashcards set and begin your learning journey today and completely free of charge!"
+  study: "📖 My flashcards"
   stats: "📊 My stats"
-  study_word_set: "📖 Study word set"
-  add_word_set: "➕ Add word set"
-  edit_word_set: "✏️ Edit word set"
-  delete_word_set: "🗑️ Delete word set"
   settings: "⚙️ Settings"
   help: "❓ Help"
   top_donators: "🏆 Top donators"
@@ -18,17 +15,19 @@ main_menu:
 
 navigation:
   back: "← Back"
+  next: "Next →"
   back_to_main_menu: "← Main menu"
   confirm: "✅ Confirm"
   cancel: "❌ Cancel"
 
-wordset:
-  study_wordset: "📖 Study word set"
-  add_wordset: "➕ Add word set"
-  edit_wordset: "✏️ Edit word set"
-  delete_wordset: "🗑️ Delete word set"
+flashcards:
+  study_flashcard_set: "📖 Study flashcards set"
+  add_flashcard_set: "➕ Add flashcards set"
+  edit_flashcard_set: "✏️ Edit flashcards set"
+  delete_flashcard_set: "🗑️ Delete flashcards set"
   messages:
-    main_menu_message: "Start learning new words here! You can manage your word sets: add new ones, edit, or delete."
+    main_menu_message: "Start learning here! You can manage your flashcards sets: add new ones, edit, or delete."
+    study_message: "Select the flashcards set you want to study."
     add_prompt: "Please send me the name of the new word set you want to add."
     add_success: "Word set <b>{wordset_name}</b> added successfully! You can now start adding words to it."
     add_failure: "A word set with the name <b>{wordset_name}</b> already exists. Please choose a different name."

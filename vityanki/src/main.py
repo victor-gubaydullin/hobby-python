@@ -5,15 +5,21 @@ from db.data_init import init_db
 from handlers.user_handlers import user_router
 from handlers.student_handlers import student_router
 from handlers.donator_handlers import donator_router
+from pseudo_usage.pseudo_users import create_pseudo_users
 from pseudo_usage.pseudo_donators import create_pseudo_donators
+from pseudo_usage.pseudo_flashcards import create_pseudo_flashcards
 
 dp = Dispatcher(bot=bot)
 
 async def main():
     await init_db()
     
+    # Create pseudo users for testing purposes
+    #await create_pseudo_users()
     # Create pseudo donators and donations for testing purposes
-    # await create_pseudo_donators()
+    #await create_pseudo_donators()
+    # Create pseudo flashcards and flashcard sets for testing purposes
+    #await create_pseudo_flashcards()
     
     dp.include_routers(user_router, student_router, donator_router)
     await dp.start_polling(bot)

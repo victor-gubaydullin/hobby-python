@@ -9,6 +9,44 @@ class User(Base):
     telegram_id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
     interface_language: Mapped[str] = mapped_column(String(8), nullable=False, default="en")
 
+    # One user can have many flashcard sets.
+    flashcard_sets: Mapped[list["FlashcardSet"]] = relationship(
+        back_populates="user",
+        cascade="all, delete-orphan"
+    )
+
+class FlashcardSet(Base):
+    __tablename__ = "flashcard_sets"
+
+    set_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    telegram_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("users.telegram_id", ondelete="RESTRICT"), nullable=False)
+    name: Mapped[str] = mapped_column(String(128), nullable=False)
+    description: Mapped[str] = mapped_column(String(256), nullable=True)
+
+    # One user can have many wordsets.
+    user: Mapped["User"] = relationship(
+        back_populates="flashcard_sets"
+    )
+
+    # One wordset can have many words.
+    flashcards: Mapped[list["Flashcard"]] = relationship(
+        back_populates="flashcard_set",
+        cascade="all, delete-orphan"
+    )
+
+class Flashcard(Base):
+    __tablename__ = "flashcards"
+
+    card_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    set_id: Mapped[int] = mapped_column(Integer, ForeignKey("flashcard_sets.set_id", ondelete="CASCADE"), nullable=False)
+    front_side: Mapped[str] = mapped_column(String(512), nullable=True)
+    back_side: Mapped[str] = mapped_column(String(512), nullable=True)
+
+    # One word belongs to one wordset.
+    flashcard_set: Mapped["FlashcardSet"] = relationship(
+        back_populates="flashcards"
+    )
+
 class Donator(Base):
     __tablename__ = "donators"
 

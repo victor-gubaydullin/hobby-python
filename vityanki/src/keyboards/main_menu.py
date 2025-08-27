@@ -6,7 +6,7 @@ def main_menu_keyboard(language_code) -> InlineKeyboardMarkup:
     # Each sublist represents a row of buttons
     buttons = [
         [
-            InlineKeyboardButton(text=t(language_code, "main_menu.study"), callback_data="wordset_main_menu"),
+            InlineKeyboardButton(text=t(language_code, "main_menu.study"), callback_data="flashcards_main_menu"),
         ],
         [
             InlineKeyboardButton(text=t(language_code, "main_menu.stats"), callback_data="stats"),

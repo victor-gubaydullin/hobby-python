@@ -1,5 +1,5 @@
 from .data_init import SessionLocal
-from .data_models import User, Donator, Donation
+from .data_models import User, FlashcardSet, Flashcard, Donator, Donation
 from sqlalchemy import select, func
 
 async def get_user_interface_language(telegram_id):
@@ -20,6 +20,39 @@ async def set_user_interface_language(telegram_id, language):
             new_user = User(telegram_id=telegram_id, interface_language=language)
             session.add(new_user)
         await session.commit()
+
+async def add_flashcard_set(telegram_id, name, description=None):
+    async with SessionLocal() as session:
+        new_set = FlashcardSet(
+            telegram_id=telegram_id,
+            name=name,
+            description=description
+        )
+        session.add(new_set)
+        await session.commit()
+        await session.refresh(new_set)  # Ensure new_set.set_id is populated after commit
+        return new_set.set_id
+
+async def add_flashcard(set_id, front_side, back_side):
+    async with SessionLocal() as session:
+        new_card = Flashcard(
+            set_id=set_id,
+            front_side=front_side,
+            back_side=back_side
+        )
+        session.add(new_card)
+        await session.commit()
+        await session.refresh(new_card)  # Ensure new_card.card_id is populated after commit
+        return new_card.card_id
+
+async def get_user_flashcard_sets(telegram_id):
+    async with SessionLocal() as session:
+        result = await session.execute(
+            select(FlashcardSet)
+            .where(FlashcardSet.telegram_id == telegram_id)
+            .order_by(FlashcardSet.set_id.desc())
+        )
+        return result.scalars().all()
 
 async def get_top_donators(n=14):
     """

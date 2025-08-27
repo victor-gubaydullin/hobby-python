@@ -3,9 +3,8 @@ from aiogram.fsm.context import FSMContext
 from states.registration import Registration
 from states.settings import InterfaceLanguage
 from locales.translation import t
-from keyboards.interface_language import language_selection_keyboard
 from keyboards.main_menu import main_menu_keyboard
-from keyboards.settings import settings_keyboard
+from keyboards.settings import settings_keyboard, language_selection_keyboard
 from keyboards.about import about_keyboard
 from keyboards.help import help_keyboard
 from db.data_utils import set_user_interface_language, get_user_interface_language
