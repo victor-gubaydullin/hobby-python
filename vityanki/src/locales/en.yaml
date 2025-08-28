@@ -42,6 +42,21 @@ flashcards:
     no_wordsets: "You have no word sets. Please add a word set first."
     no_words: "The word set <b>{wordset_name}</b> has no words yet. Please add some words first."
 
+stats:
+  message: "Here's your learning progress: 
+            
+            Your winstreak is {win_streak} days!
+            
+            You have {total_flashcard_sets} word sets with a total of {total_words} cards.
+            You have studied {studied_sets} with a total of {studied_cards} cards so far.
+            
+            Overrall, you have answered {correct_answers} out of {total_answers} questions correctly, which is a success rate of {success_rate}%.
+
+            Finally, you are at place {user_rank} in the ranking of all users by the number of studied cards.
+
+            Keep up the great work and continue your learning journey!"
+  message_empty_stats: "You haven't studied any words yet. Start learning to latter see your stats here!"
+
 settings:
   message: "Here you can change the common settings of the bot."
   interface_language: "🌐 Language"

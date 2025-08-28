@@ -2,6 +2,11 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from locales.translation import t
 
 def flashcards_main_menu_keyboard(language_code, user_flashcard_sets, chunk_index=0) -> InlineKeyboardMarkup:
+    add_new_set_button = [
+        [
+            InlineKeyboardButton(text=t(language_code, "flashcards.add_flashcard_set"), callback_data="add_wordset"),
+        ]
+    ]
 
     # Split user_flashcard_sets into chunks of 5 for better display
     chunked_flashcard_sets = [
@@ -27,8 +32,6 @@ def flashcards_main_menu_keyboard(language_code, user_flashcard_sets, chunk_inde
             )
         ] for flashcard_set in current_chunk
     ]
-
-    print(f"Chunk index: {chunk_index}, Total chunks: {len(chunked_flashcard_sets)}")
 
     # Navigation buttons if there are multiple chunks
     if chunk_index is None:
@@ -76,14 +79,10 @@ def flashcards_main_menu_keyboard(language_code, user_flashcard_sets, chunk_inde
                 InlineKeyboardButton(text=t(language_code, "navigation.back_to_main_menu"), callback_data="main_menu"),
             ]
         ]
-    
-    add_new_set_button = [
-            InlineKeyboardButton(text=t(language_code, "flashcards.add_flashcard_set"), callback_data="add_wordset"),
-    ]
 
     if flashcards_sets_buttons != []:
-        all_buttons = [add_new_set_button] + flashcards_sets_buttons + navigation_buttons
+        all_buttons = add_new_set_button + flashcards_sets_buttons + navigation_buttons
     else:
-        all_buttons = [add_new_set_button, navigation_buttons]
+        all_buttons = add_new_set_button + navigation_buttons
 
     return InlineKeyboardMarkup(inline_keyboard=all_buttons)

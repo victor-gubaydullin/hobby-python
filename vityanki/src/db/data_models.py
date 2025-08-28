@@ -1,5 +1,5 @@
 from sqlalchemy.orm import declarative_base, Mapped, mapped_column, relationship
-from sqlalchemy import String, Integer, BigInteger, ForeignKey
+from sqlalchemy import String, Integer, BigInteger, Enum, DateTime, ForeignKey
 
 Base = declarative_base()
 
@@ -22,16 +22,35 @@ class FlashcardSet(Base):
     telegram_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("users.telegram_id", ondelete="RESTRICT"), nullable=False)
     name: Mapped[str] = mapped_column(String(128), nullable=False)
     description: Mapped[str] = mapped_column(String(256), nullable=True)
+    study_mode: Mapped[str] = mapped_column(Enum("fast", "long-term", name="study_mods_enum"), nullable=False, default="fast")
 
-    # One user can have many wordsets.
+    # One user can have many sets.
     user: Mapped["User"] = relationship(
         back_populates="flashcard_sets"
     )
 
-    # One wordset can have many words.
+    # One set can have many cards.
     flashcards: Mapped[list["Flashcard"]] = relationship(
         back_populates="flashcard_set",
         cascade="all, delete-orphan"
+    )
+
+    # One set can have many study logs.
+    study_logs: Mapped[list["FlashcardSetsStudyLog"]] = relationship(
+        back_populates="flashcard_set",
+        cascade="all, delete-orphan"
+    )
+
+class FlashcardSetsStudyLog(Base):
+    __tablename__ = "flashcard_sets_study_log"
+
+    log_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    set_id: Mapped[int] = mapped_column(Integer, ForeignKey("flashcard_sets.set_id", ondelete="CASCADE"), nullable=False)
+    study_datetime: Mapped[str] = mapped_column(DateTime, nullable=False)  # Format: YYYY-MM-DD HH:MM:SS
+
+    # One study log entry belongs to one flashcard set.
+    flashcard_set: Mapped["FlashcardSet"] = relationship(
+        back_populates="study_logs"
     )
 
 class Flashcard(Base):
@@ -41,6 +60,8 @@ class Flashcard(Base):
     set_id: Mapped[int] = mapped_column(Integer, ForeignKey("flashcard_sets.set_id", ondelete="CASCADE"), nullable=False)
     front_side: Mapped[str] = mapped_column(String(512), nullable=True)
     back_side: Mapped[str] = mapped_column(String(512), nullable=True)
+    correct_answers: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    total_answers: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
 
     # One word belongs to one wordset.
     flashcard_set: Mapped["FlashcardSet"] = relationship(
